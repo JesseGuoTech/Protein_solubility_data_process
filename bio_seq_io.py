@@ -34,7 +34,8 @@ def aa_replace(csv_files_p, fasta_files_p, out_files_p, border) -> tuple:
             seq = SeqIO.read(fasta_files.joinpath(csv_file.with_suffix(".fasta").name), "fasta").seq
             mod_seq = []
             for serial_number, resident, origin_aa, turned_aa, _, _, ddg in csv_reader:
-                sol = 1 if float(ddg) < border else 0
+                #sol = 1 if float(ddg) < border else 0
+                sol=float(ddg)
                 mul_seq = MutableSeq(seq)
                 if mul_seq[int(resident) - 1] == origin_aa:
                     mul_seq[int(resident) - 1] = turned_aa
