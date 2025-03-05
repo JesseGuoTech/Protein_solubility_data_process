@@ -177,7 +177,5 @@ cython_debug/
 .idea
 
 # datas
-csv/
-fasta/
 output/
-*.fasta
+/*.fasta
